@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
 	"author": "Vincent Uche",
-	"description": "Get random quotes and share the on twitter or download the beautiful images generated and share universally.",
+	"description": "Get random quotes and share on twitter or download the beautiful images generated and share universally.",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
