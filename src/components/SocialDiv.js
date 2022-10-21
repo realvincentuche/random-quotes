@@ -12,7 +12,7 @@ const SocialDiv = ({ quote }) => {
       .then((dataUrl) => {
         const a = document.createElement("a");
         a.href = dataUrl;
-        a.download = "quote.png";
+        a.download = quote.authorSlug + ".png";
         a.click();
         reflink.classList.add("invisible", "hidden");
       })
@@ -26,9 +26,9 @@ const SocialDiv = ({ quote }) => {
       <a
         href={`https://twitter.com/intent/tweet?text=${encodeURI(
           quote.content + " - " + quote.author
-        )}&hashtags=${["quote", ...tags].join(",")}&url=${
-          window.location.href
-        }`}
+        )}&hashtags=${["quote", ...tags]
+          .map((item) => item.replaceAll("-", "_"))
+          .join(",")}&url=${window.location.href}`}
         target="_blank"
         rel="noopener noreferrer"
       >
